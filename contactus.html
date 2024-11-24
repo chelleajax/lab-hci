@@ -26,6 +26,12 @@
                     <li><a href="contactus.html" class="current">Contact Us</a></li>
                 </ul>
             </nav>
+
+            <div class="burger">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
         </div>
     </header>
 
@@ -53,13 +59,22 @@
         </div>
 
         <div class="form-container">
+            <label for="message">Message (optional)</label>
+            <textarea placeholder="Insert message..." name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-container">
             <div class="checkbox-group">
                 <div>
                     <input type="checkbox" id="promotion" name="promotion">
                     <label for="promotion">receive the latest news, exclusive offers, and new product releases. </label>
                 </div>
-            </div>
-            
+            </div>     
+        </div>
+
+        <div class="form-container-validation">
+            <input type="radio" name="validation" id="validation">
+            <label for="validation">I'm sure the data is correct</label>
         </div>
 
         <button type="submit" id="send-button">Send</button>

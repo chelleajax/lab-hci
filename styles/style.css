@@ -118,10 +118,10 @@ nav ul li a {
 
 .burger{
     display: none;
-    z-index: 99;
+    z-index: 100;
     position: fixed;
-    top: 33px;
-    right: 35px;
+    top: 30px;
+    right: 32px;
 }
 
 #head{
@@ -433,7 +433,7 @@ nav ul li a:hover{
 
 #form-contact{
     width: 65%;
-    height: 40rem;
+    height: 60rem;
     background-color: rgb(255, 223, 228);
     display: flex;
     margin: auto;

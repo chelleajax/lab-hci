@@ -1,11 +1,35 @@
+const navSlide = () => {
+    const burger = document.querySelector(".burger")
+    const navLists = document.querySelector("nav")
+
+    if (burger && navLists) {
+        burger.addEventListener("click", () => {
+            navLists.classList.toggle("nav-active");
+            burger.classList.toggle("toggle-burger");
+        });
+    } else {
+        console.error('Element with class "burger" or "nav" not found.');
+    }
+};
+
+navSlide();
+
+document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            navLinks.classList.toggle("active");
+        });
+});
+
 document.getElementById('form-contact').addEventListener('submit', (e)=>{
     e.preventDefault();
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+    const phonenumber = document.getElementById('phonenumber').value;
+    const gender = document.getElementById('gender').value;
+    const message = document.getElementById('message').value;
     const promotion = document.getElementById('promotion').checked;
-    console.log(name, email, phone, gender, message, promotion);
-
+    const validation = document.getElementById('validation').checked;
+    console.log(name, email, phonenumber, gender, message, phonenumber, promotion, validation);
     if(!name){
         alert('Name should be filled');
         return;
@@ -21,42 +45,22 @@ document.getElementById('form-contact').addEventListener('submit', (e)=>{
         return
     }
 
-    if(!phone){
-        alert('Phone number should be filled');
+    if(!phonenumber){
+        alert('phonenumber number should be filled');
         return;
     }
 
-    if(!phone.startsWith('08')){
-        alert('Phone number must starts with 08');
+    if(!phonenumber.startsWith('08')){
+        alert('phonenumber number must starts with 08');
         return;
+    }
+    
+    if(!validation){
+        alert("Please check the 'I'm sure the data is correct' checkbox");
+        return
     }
 
     alert('Thank you for submitting!!');
     window.location.href = 'contactus.html';
 
-})
-
-const navSlide = () => {
-    const burger = document.querySelector(".burger")
-    const navLists = document.querySelector("nav")
-
-    burger.addEventListener("click", () =>{
-        navLists.classList.toggle("nav-active");
-        burger.classList.toggle("toggle-burger");
-    });
-};
-
-navSlide();
-
-document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
 });
